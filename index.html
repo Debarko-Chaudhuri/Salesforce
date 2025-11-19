@@ -3,19 +3,25 @@
     <head>
         <Title>My first Page</Title>
     </head>
-    <body>
+     <body>
         <h1>Welcome to my first HTML</h1>
         <ul>
             <li><a href="https://google.com">Go to Google</a></li>
             <li><a href="https://github.com/Debarko-Chaudhuri">Welcome to my github</a></li>
         </ul>
-        <div>Div1</div>
-        <div>Div2</div>
-        <p>P1</p>
-        <p>P2</p>
-        <Span>Span1</Span>
-        <Span>span2</Span>
-        <strong>Strong tag</strong>
+        <!--<button onclick="callClickMe()">click me</button>
+        <button id='button2'>2click me</button><!--to fetch the func programatically using event listner-->
+        <!--giving id and passing it with QS -->
+        <button>Click Me</button>
+       <!--<div class="demo"></div>--> 
+       <form onclick="alert('I am Form')">I am Form
+            <div onclick="alert('I am div')">I am Div
+                <p onclick="alert('I am p')">I am p</p>
+            </div>
+       </form>
+       <button onclick="callCustomMethod()">Show detail</button>
     </body>
-    <script src="script.js"></script>
+    <script src="script.js"></script><!--type="module"//put this in the src for import export-->
+   
+    
 </html>
