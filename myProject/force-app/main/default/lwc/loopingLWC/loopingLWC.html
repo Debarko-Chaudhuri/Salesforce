@@ -1,0 +1,52 @@
+<template>
+
+    <lightning-card title="for:each loop">    
+        <template for:each={carList} for:item="car">
+            <ul key={car} class="slds-has-dividers_around-space">
+                <li class="slds-item">{car}</li>
+            </ul>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="iterator loop">
+        <div class="slds-var-m-around_medium">
+            <template iterator:people={people}>
+                <div key={people.value.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <template lwc:if={people.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>List of people</strong>
+                            </div>
+                         </template>
+
+                        <li class="slds-item">
+                            {people.value.name}:{people.value.id}
+                        </li>
+
+                        <template lwc:if={people.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>End of List</strong>
+                            </div>
+                         </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="For Each loop">
+        <div class="slds-var-m-around_medium">
+            <ul class="slds-has-dividers_around-space"><!--ideally use l outside loop-->
+                <template for:each={people} for:item="peopleList">
+                    <div key={peopleList.id}>
+                    
+                            <li class="slds-item">
+                                {peopleList.name}:{peopleList.id}
+                            </li>
+                        
+                    </div>
+                </template>
+        </ul>
+        </div>
+    </lightning-card>
+</template>

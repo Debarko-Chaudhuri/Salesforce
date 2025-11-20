@@ -1,0 +1,26 @@
+<template>
+    <lightning-card  title="Conditional Rendering">
+        <lightning-button 
+        variant="brand" 
+        label="Click me to reveal" 
+        title="Primary action" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small"></lightning-button>
+
+        <template if:true={isVisible}>
+            <div>You are seeing it cause you clicked the button</div>
+        </template>
+        <template if:false={isVisible}>
+            <div>You are seeing it cause you have not clicked the button</div>
+        </template>
+
+        <lightning-input type="text" 
+                label="Enter..."
+                onkeyup={changeHandler}>
+        </lightning-input>
+        <template lwc:if={helloMehod}>
+            <div>This is only showed as you type hello</div>
+        </template>
+    </lightning-card>
+
+</template>
