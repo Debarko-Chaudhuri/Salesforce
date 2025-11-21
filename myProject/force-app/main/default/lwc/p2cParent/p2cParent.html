@@ -1,0 +1,45 @@
+<template>
+    <!--Simple Data Pass-->
+    <c-p2c-alert
+    message={msg}
+    card-heading="Parent to Child Communication"
+    ></c-p2c-alert>
+
+    <!--Non primitive Data Pass-->
+    <lightning-card title="Parent  to Child Communication on no Primitive data">
+        <div class="slds-var-m-bottom"></div>
+        <c-p2c-carousel
+        carousel-details={carouselData}></c-p2c-carousel>
+    </lightning-card>
+    
+    
+    <!--Data Passed on any action-->
+    <div class="slds-var-m-bottom"></div>
+    <lightning-card title="Parent  to Child Communication on action">
+        <div class="slds-var-m-around_medium">
+            <lightning-input 
+            type="number" 
+            label="Enter percentage" 
+            onkeyup={handleChange}
+            value={progressValue}
+            ></lightning-input>
+            <c-p2c-progress
+            progress={progressValue}></c-p2c-progress>
+        </div>
+    </lightning-card>
+
+    <!--Calling child method from Parent-->
+    <div class="slds-var-m-bottom"></div>
+    <lightning-card title="Parent  to Child Communication on action">
+        <div class="slds-var-m-around_medium">
+            <lightning-button 
+            variant="brand" 
+            label="Reset Slider" 
+            title="Primary action" 
+            onclick={handleClick} 
+            class="slds-m-left_x-small"></lightning-button>
+            <c-p2c-slider
+            progress={progressValue}></c-p2c-slider>
+        </div>
+    </lightning-card>
+</template>
