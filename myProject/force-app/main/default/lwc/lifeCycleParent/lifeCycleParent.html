@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="LWC Component Lifecycle">
+        <div class="slds-var-m-around_medium">
+            
+            <template if:false={isVisible}>
+                <lightning-button 
+                label="Show Click"
+                onclick={handleClick}></lightning-button>
+            </template>
+            
+            <template if:true={isVisible}>
+                <lightning-button 
+                label="Remove Click"
+                onclick={handleClick}></lightning-button>
+            </template>
+            
+            <template if:true={isVisible}>
+                <c-life-cycle-child></c-life-cycle-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>
