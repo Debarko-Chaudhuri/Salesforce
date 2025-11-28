@@ -9,7 +9,7 @@ export default class ApexImperativeDemo extends LightningElement {
             this.error=undefined
         })
         .catch((error)=>{
-            this.error=this.error,
+            this.error=error,
             this.accountList=undefined
         })
      }
