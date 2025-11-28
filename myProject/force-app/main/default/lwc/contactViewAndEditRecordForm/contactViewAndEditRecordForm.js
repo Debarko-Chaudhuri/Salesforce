@@ -1,4 +1,5 @@
 import { LightningElement,api } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import CONTACT from '@salesforce/schema/Contact'//gotta fetch this else direct @objectInfoAPi not working
 import NAME_FIELD from '@salesforce/schema/Contact.Name';
 import ACCOUNTID_FIELD from '@salesforce/schema/Contact.AccountId';
@@ -20,4 +21,16 @@ export default class ContactViewAndEditRecordForm extends LightningElement {
     handleViewAndEdit(){
         this.editMode = !this.editMode
     }
+
+    handleSuccess(){
+        this.editMode=false
+        this.dispatchEvent(
+            new ShowToastEvent({
+                title: "Saved",
+                message: 'Contact is Updated',
+                variant: 'success'
+            })
+        )
+    }
+
 }

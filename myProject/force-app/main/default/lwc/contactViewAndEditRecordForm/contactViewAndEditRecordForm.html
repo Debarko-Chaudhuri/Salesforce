@@ -1,36 +1,41 @@
 <template>
     <lightning-card title="Toggle to View or Edit Form">
         <div class="slds-p-around_medium">
+
             <template if:true={editMode}>
                 <lightning-input
                 type="toggle"
-                label="View Mode"
+                label="Edit Mode"
+                checked={editMode}
                 onchange={handleViewAndEdit}></lightning-input>
             </template>
+
             <template if:false={editMode}>
                 <lightning-input
                 type="toggle"
-                label="Edit Mode"
+                label="View Mode"
+                checked={editMode}
                 onchange={handleViewAndEdit}></lightning-input>
             </template>
+
             <template lwc:if={editMode}>
                 <lightning-record-edit-form
-                record-id={recordId}
-                object-api-name={objectApi}
-                >
-                <!--Input field for edit form-->
-                <lightning-input-field field-name={accId}></lightning-input-field>
-                <lightning-input-field field-name={name}></lightning-input-field>
-                <lightning-input-field field-name={title}></lightning-input-field>
-                <lightning-input-field field-name={email}></lightning-input-field>
-                <lightning-input-field field-name={phone}></lightning-input-field>    
-                
-                <lightning-button
-                 type="submit"
-                 label="update"
-                 onclick={handleViewAndEdit}>
-                </lightning-button>
-            </lightning-record-edit-form>
+                    record-id={recordId}
+                    object-api-name={objectApi}
+                    onsuccess={handleSuccess}
+                    >
+                    <!--Input field for edit form-->
+                    <lightning-input-field field-name={accId}></lightning-input-field>
+                    <lightning-input-field field-name={name}></lightning-input-field>
+                    <lightning-input-field field-name={title}></lightning-input-field>
+                    <lightning-input-field field-name={email}></lightning-input-field>
+                    <lightning-input-field field-name={phone}></lightning-input-field>    
+                    
+                    <lightning-button
+                    type="submit"
+                    label="update">
+                    </lightning-button>
+                </lightning-record-edit-form>
             </template>
             <template if:false={editMode}>
                 <lightning-record-view-form
