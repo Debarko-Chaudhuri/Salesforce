@@ -27,6 +27,19 @@
             progress={progressValue}></c-p2c-progress>
         </div>
     </lightning-card>
+    <div class="slds-var-m-bottom"></div>
+    <lightning-card title="Post a comment to child">
+        <div class="slds-var-m-around_medium">
+            <lightning-textarea
+             value={comment}
+             onchange={handleTextChange}></lightning-textarea>
+            <lightning-button
+            label="Post"
+            onclick={handlePostClick}>Post</lightning-button>
+            <c-p2c-post-comment comment={commentToChild}></c-p2c-post-comment>
+        
+        </div>
+    </lightning-card>
 
     <!--Calling child method from Parent-->
     <div class="slds-var-m-bottom"></div>

@@ -1,0 +1,36 @@
+<template>
+    <!-- <lightning-card class="slds-var-m-around-medium_m">
+        <div>Parent</div>
+        <lightning-button label="Toggle row" onclick={handleClick}></lightning-button>
+        <template if:true={showRow}>
+            <c-revenue-row acc></c-revenue-row>
+        </template>
+    </lightning-card>-->
+
+   <lightning-card class="slds-var-m-around-medium_m">
+        <template if:true={accounts.data}>
+            <template for:each={accounts.data} for:item="account">
+                <div key={account.Id}>
+                    <c-revenue-row account={account}></c-revenue-row>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+
+    <lightning-button label="Fetch Accounts Imperitavely" onclick={fetchAccounts}></lightning-button>
+    
+    <lightning-card class="slds-var-m-around-medium_m">
+        <template if:true={isLoading}>
+            <lightning-spinner size="small"></lightning-spinner>
+        </template>
+        <template if:true={accountList}>
+            <template for:each={accountList} for:item="account">
+                <div key={account.Id}>
+                    <p><strong>{account.Name}</strong></p>
+                    <p>account Id: {account.Id}</p>
+                    <p>account Revenue: {account.AnnualRevenue}</p>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

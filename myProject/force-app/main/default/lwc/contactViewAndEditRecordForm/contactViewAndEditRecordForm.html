@@ -1,0 +1,56 @@
+<template>
+    <lightning-card title="Toggle to View or Edit Form">
+        <div class="slds-p-around_medium">
+
+            <template if:true={editMode}>
+                <lightning-input
+                type="toggle"
+                label="Edit Mode"
+                checked={editMode}
+                onchange={handleViewAndEdit}></lightning-input>
+            </template>
+
+            <template if:false={editMode}>
+                <lightning-input
+                type="toggle"
+                label="View Mode"
+                checked={editMode}
+                onchange={handleViewAndEdit}></lightning-input>
+            </template>
+
+            <template lwc:if={editMode}>
+                <lightning-record-edit-form
+                    record-id={recordId}
+                    object-api-name={objectApi}
+                    onsuccess={handleSuccess}
+                    >
+                    <!--Input field for edit form-->
+                    <lightning-input-field field-name={accId}></lightning-input-field>
+                    <lightning-input-field field-name={name}></lightning-input-field>
+                    <lightning-input-field field-name={title}></lightning-input-field>
+                    <lightning-input-field field-name={email}></lightning-input-field>
+                    <lightning-input-field field-name={phone}></lightning-input-field>    
+                    
+                    <lightning-button
+                    type="submit"
+                    label="update">
+                    </lightning-button>
+                </lightning-record-edit-form>
+            </template>
+            <template if:false={editMode}>
+                <lightning-record-view-form
+                record-id={recordId}
+                object-api-name={objectApi}
+                >
+                <!--Output fields for view form-->
+                <lightning-output-field field-name={accId}></lightning-output-field>
+                <lightning-output-field field-name={name}></lightning-output-field>
+                <lightning-output-field field-name={title}></lightning-output-field>
+                <lightning-output-field field-name={email}></lightning-output-field>
+                <lightning-output-field field-name={phone}></lightning-output-field>    
+
+                </lightning-record-view-form>
+            </template>
+        </div>
+    </lightning-card>
+</template>

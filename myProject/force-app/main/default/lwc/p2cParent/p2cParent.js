@@ -2,6 +2,8 @@ import { LightningElement } from 'lwc';
 
 export default class P2cParent extends LightningElement {
     msg="Data from Parent"
+    comment
+    commentToChild
     progressValue=0
     carouselData=[
         {
@@ -24,6 +26,12 @@ export default class P2cParent extends LightningElement {
     }
     handleClick(){
         this.template.querySelector('c-p2c-slider').resetSlider()
+    }
+    handleTextChange(event){
+        this.comment=event.target.value
+    }
+    handlePostClick(){
+        this.commentToChild=this.comment
     }
 }
                    

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Account Data Table Wired">
+        <lightning-datatable
+        columns={coloumn}
+        data={accList.data}
+        key-field="Id"
+        ></lightning-datatable>
+    </lightning-card>
+
+    <lightning-card title="Account Data Table CCB">
+        <lightning-datatable
+        columns={coloumn}
+        data={accountInfo}
+        key-field="Id"
+        ></lightning-datatable>
+    </lightning-card>
+</template>
