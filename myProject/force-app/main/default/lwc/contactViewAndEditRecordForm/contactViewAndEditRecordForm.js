@@ -17,7 +17,7 @@ export default class ContactViewAndEditRecordForm extends LightningElement {
     
     editMode=false
     
-    handleChange(){
+    handleViewAndEdit(){
         this.editMode = !this.editMode
     }
 }
