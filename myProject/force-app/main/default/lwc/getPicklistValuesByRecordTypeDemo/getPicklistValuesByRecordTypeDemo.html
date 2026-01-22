@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="GetPickListvaluesDemo">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox 
+            name="Stage" 
+            label="Stage" 
+            options={stageOptions} 
+            onchange={handleChange}></lightning-combobox>    
+            <p>Selected Stage: {selectedStage}</p>
+            <lightning-combobox 
+            name="Type" 
+            label="Type" 
+            options={typeOptions} 
+            onchange={handleChange}></lightning-combobox>    
+            <p>Selected Type: {selectedType}</p>
+        </div>
+    </lightning-card>
+</template>
