@@ -5,7 +5,7 @@ export default class WireDemoUserDetail extends LightningElement {
     userId=Id
     userDetail
    // User Detail Using Wire as function
-    @wire(getRecord, {recordId:'$userId',fields:['User.Name','User.Email']}
+    @wire(getRecord, {recordId:'$userId',fields:['User.Name','User.Email']}//$ to make it reactive so that it loads once the id is there else it will throw error
         )
     userdetailHandler({data,error}){
         if(data){
