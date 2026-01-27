@@ -13,7 +13,7 @@ export default class GetPicklistValuesByRecordTypeDemo extends LightningElement 
     {objectApiName:OPPORTUNITY_Object,recordTypeId:'$objectInfo.data.defaultRecordTypeId'})
     picklistValuesByRecordType({data,error}){
         if(data){
-            console.log(data);
+          //  console.log(data);
             this.stageOptions=[...this.picklistHandler(data.picklistFieldValues.StageName)]
             this.typeOptions=[...this.picklistHandler(data.picklistFieldValues.Type)]
         }

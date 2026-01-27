@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Get List UI Demo" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+           <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Title</th>
+                </thead>
+                <tbody>
+                    <template for:each={contacts} for:item="contact">
+                        <tr key={contact.fields.Id.value}>
+                            <td>{contact.fields.Name.value}</td>
+                            <td>{contact.fields.Email.value}</td>
+                            <td>{contact.fields.Title.value}</td>
+                        </tr>
+                    </template>
+                </tbody>
+           </table>
+           </div>
+           <div class="slds-grid slds-grid_align-spread slds-m-around_medium">
+                <div class="slds-var-aroud_medium">
+                    <button class="slds-button slds-button_brand" onclick={handlePrevious}>Previous</button>
+                </div>
+                <div class="slds-var-aroud_medium">
+                    <button class="slds-button slds-button_brand" onclick={handleNext}>Next</button>
+                </div>
+           </div>
+    </lightning-card>
+</template>
