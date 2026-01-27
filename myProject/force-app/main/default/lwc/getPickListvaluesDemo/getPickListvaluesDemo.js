@@ -12,7 +12,7 @@ export default class GetPickListvaluesDemo extends LightningElement {
     @wire(getPicklistValues,{recordTypeId:'$objectInfo.data.defaultRecordTypeId', fieldApiName:INDUSTRY_FIELD})
     industryPicklist({data,error}){
             if(data){
-                console.log(data);
+               // console.log(data);
                 //using concept of shalow copy so the any changes get
                 // reflected in the industryOptions quickly
                 this.industryOptions=[...this.generatePicklistOptions(data)]
